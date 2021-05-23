@@ -86,7 +86,8 @@ code {
                   <h3>Introduction</h3>
 
                   <h7> 
-
+		Our architecture requires us to consider the threats that can arise from an altogether new mode of interaction: loading and running code on other users’ machines. We assume that users naturally have physical access to their machines, and can thus introspect on running processes. However, we also assume that some Bento middleboxes will have secure, trusted execution environments (TEEs), such as Intel SGX. We explicitly assume that these environments are safe; that is, for any code or data being executed or stored inside of a secure enclave, we assume that the attacker can- not introspect on either, despite having physical access to the machine. 
+		In order to run Bento functions within SGX, we use Graphene. 
                   </h7>
                 <ul>
 			<li>Install <a href="https://github.com/intel/linux-sgx-driver">SGX driver</a> and <a href="https://github.com/intel/linux-sgx/tree/sgx_2.10_reproducible">SGX SDK & PSW</a>.</li>
