@@ -2,8 +2,15 @@
 <html lang="en">
 <style type="text/css">
 p {
-  color: white;
+  color: black;
   
+}
+code {
+  font-family: Consolas,"courier new";
+  color: black;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
 }
 </style>
   <head>
@@ -89,42 +96,27 @@ p {
 
                   <li>Navigate to the directory /bento/experiments/LoadBalancer in the Github source code. </li>
 
-                  <section class="ftco-section ftco-bread">
-                  <div class="container">
-                    <div class="row no-gutters slider-text justify-content-left align-items-center">
-                      <div class="col-md-8 ftco-animate">
-                  <p>mkdir bento</p>
-                  <p>cd bento</p>
-                  <p>nano run_tor.py (paste run_tor.py code from the directory)</p>
-                  <p>nano replica.py (paste replica.py code from the directory)</p>
-                  <p>cp /usr/local/var/lib/tor/hidden_service/hs_ed25519_secret_key /bento (copy the Onion Service private key)</p>
-                  <p>cp /usr/local/var/lib/tor/hidden_service/hs_ed25519_secret_key /bento (copy the Onion Service hostname)</p>
+                  <code>
+                  mkdir bento<br/>
+                  cd bento<br/>
+                  nano run_tor.py (paste run_tor.py code from the directory)<br/>
+                  nano replica.py (paste replica.py code from the directory)<br/>
+                  cp /usr/local/var/lib/tor/hidden_service/hs_ed25519_secret_key /bento (copy the Onion Service private key)<br/>
+                  cp /usr/local/var/lib/tor/hidden_service/hs_ed25519_secret_key /bento (copy the Onion Service hostname)<br/>
                   
-                  </div>
-                  </section>
+                  </code>
 
                 </ul> 
                 <h4>Run Load Balancer with Bento</h4>
                 <ul>
-                  <li>Connect to the Bento Server and Store/Execute your function. Specify the number of replicas and number of connections desired per replica in the function. Code in /bento/experiments/LoadBalancer/load.func</li>
+                  <li>Connect to the Bento Server and Store/Execute your function. Specify the number of replicas and number of connections desired per replica in the function. Code in <code>/bento/experiments/LoadBalancer/load.func</code></li>
 
-                  <section class="ftco-section ftco-bread">
-                  <div class="container">
-                    <div class="row no-gutters slider-text justify-content-left align-items-center">
-                      <div class="col-md-8 ftco-animate">
-                  <p></p>
-                  </div>
-                  </section>
+                 <code>write code to start load balancer</code>
 
                   <li>Connect all replicas to the LoadBalancer.</li>
-                  <section class="ftco-section ftco-bread">
-                  <div class="container">
-                    <div class="row no-gutters slider-text justify-content-left align-items-center">
-                      <div class="col-md-8 ftco-animate">
-                  <p></p>
-                  </div>
-                  </section>
+                  <code>python3 replica.py <IP of loadbalancer></code>
                   <li>You are all set!</li>
+                  <li>Refer to the <a href="https://github.com/breakerspace/bento/tree/main/experiments/LoadBalancer"> ReadMe.md</a> to run experiments.
                 </ul>
 
 
