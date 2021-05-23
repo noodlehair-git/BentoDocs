@@ -2,8 +2,22 @@
 <html lang="en">
 <style type="text/css">
 p {
-  color: white;
+  color: black;
   
+}
+code {
+  font-family: Consolas,"courier new";
+  color: black;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
 }
 </style>
 
@@ -84,93 +98,70 @@ p {
                   </h7>
 
                 <h3>Install Tor</h3>
-                <p>
+                <code>
                   
-                	<section class="ftco-section ftco-bread">
-
-			        <div class="container">
-			          <div class="row no-gutters slider-text justify-content-left align-items-center">
-			            <div class="col-md-8 ftco-animate">
-			              <p>sudo apt update</p>
-			              <p>sudo apt install automake gcc libevent-dev libssl-dev asciidoc make zlib1g-dev</p>
-			              <p>git clone https://github.com/torproject/tor.git</p>
-			              <p>cd tor</p>
-			              <p>sh autogen.sh </p>
-			              <p>sudo ./configure</p>
-			              <p>sudo make </p>
-			              <p>sudo make install</p>
+                	
+			              sudo apt update<br/>
+			              sudo apt install automake gcc libevent-dev libssl-dev asciidoc make zlib1g-dev<br/>
+			              git clone https://github.com/torproject/tor.git<br/>
+			              cd tor<br/>
+			              sh autogen.sh<br/>
+			              sudo ./configure<br/>
+			              sudo make<br/>
+			              sudo make install<br/>
 			              
-			            </div>
-			          </div>
-			        </div>
-			      </section>
-			      			<h7>Next, edit the torrc (Tor configuration file). </h7>
-			      	<section class="ftco-section ftco-bread">
-			        <div class="container">
-			          <div class="row no-gutters slider-text justify-content-left align-items-center">
-			            <div class="col-md-8 ftco-animate">
-			              <p>cd /usr/local/etc/tor/</p>
-			              <p>sudo cp torrc.sample torrc</p>
-			        </div>
-			      	</section> 
+			     </code>
+			     <h7>Next, edit the torrc (Tor configuration file). </h7> <br/>
+			      	
+			     <code>
+                     cd /usr/local/etc/tor/<br/>
+			         sudo cp torrc.sample torrc<br/>
+                 </code>
+			        
 
-			      	<h7>To start and stop Tor: </h7>  
+			      	<h7>To start and stop Tor: </h7>  <br/>
 
-			      	<section class="ftco-section ftco-bread">
-			        <div class="container">
-			          <div class="row no-gutters slider-text justify-content-left align-items-center">
-			            <div class="col-md-8 ftco-animate">
-			              <p>cd /usr/local/etc/tor/</p>
-			              <p>sudo cp torrc.sample torrc</p>
-			        </div>
-			      	</section>  
+			     <code>
+			              tor<br/>
+			              sudo killall tor<br/>
+			         
                   
-                </p>
+                </code>
 
                 <h3>What are <a href="https://2019.www.torproject.org/docs/onion-services.html.en">Onion Services?</a></h3>
-                  <h7> In addition to connecting to external servers, Tor supports hidden services, which allow users to host services anonymously.
+                <h7> In addition to connecting to external servers, Tor supports hidden services, which allow users to host services anonymously.
 
                   </h7>
 
                   <h3>Create Your Own Onion Service</h3>
-                 	<h7>Follow the below-listed instructions to create your own Onion Service. First install Apache and setup a sample website.</h7>  
+                  <h7>Follow the below-listed instructions to create your own Onion Service. First install Apache and setup a sample website.</h7>  
 
-			      	<section class="ftco-section ftco-bread">
-			        <div class="container">
-			          <div class="row no-gutters slider-text justify-content-left align-items-center">
-			            <div class="col-md-8 ftco-animate">
-			              <p>sudo apt install apache2</p>
-			              <p>cd /var/www/html</p>
-			              <p>sudo nano index.html (set-up a sample website here)</p>
-			             </div>
-			      	</section>  
+			      <code>
+			              sudo apt install apache2<br/>
+			              cd /var/www/html<br/>
+			              sudo nano index.html (set-up a sample website here)<br/>
+                  </code>
+			               
+                    
+			      	<h7>Next, edit the torrc file to host a service (located in /usr/local/etc/tor/torrc). Add the following lines to torrc.</h7><br/>
 
-			      	<h7>Next, edit the torrc file to host a service (located in /usr/local/etc/tor/torrc). Add the following lines to torrc.</h7>
+			      		
+			        <code>  
+			              HiddenServiceDir /usr/local/var/lib/tor/hidden_service/<br/>
+			              HiddenServicePort 80 127.0.0.1:80<br/>
+			        </code> 
 
-			      		<section class="ftco-section ftco-bread">
-			        <div class="container">
-			          <div class="row no-gutters slider-text justify-content-left align-items-center">
-			            <div class="col-md-8 ftco-animate">
-			              
-			              <p>HiddenServiceDir /usr/local/var/lib/tor/hidden_service/</p>
-			              <p>HiddenServicePort 80 127.0.0.1:80</p>
-			              </div>
-			      	</section>  
+			         <h7>Then, start Apache and launch Tor. </h7> <br/>
 
-			         <h7>Then, start Apache and launch Tor. </h7> 
-
-			         <section class="ftco-section ftco-bread">
-			        <div class="container">
-			          <div class="row no-gutters slider-text justify-content-left align-items-center">
-			            <div class="col-md-8 ftco-animate">
-						  <p>sudo /etc/init.d/apache2 start</p>
-						  <p>tor</p>
-						  </div>
-			      	</section>
+			         <code>
+						  sudo /etc/init.d/apache2 start<br/>
+						  tor<br/>
+				    </code>
+			      	
 			              
 
 			       
-			    <h7>Test the hidden service by accessing the .onion address (stored in /usr/local/var/lib/tor/hidden_service/hostname) through a <a href="https://www.torproject.org/download/">Tor Browser</a>.</h7>
+			    <h7>Test the hidden service by accessing the .onion address (stored in <code>/usr/local/var/lib/tor/hidden_service/hostname</code>) through a <a href="https://www.torproject.org/download/">Tor Browser</a>.</h7>
 
                 <h5 style="color: #731768;"> Download the source code from <a href="https://github.com/breakerspace/bento">Github</a></h5>
                 <h5 style="color: #731768;"> Checkout the <a href="https://www.cs.purdue.edu/homes/clg/files/Bento_CCS20.pdf">Bento Poster!</a></h5> 
