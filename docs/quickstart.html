@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <style type="text/css">
+
 p {
-  color: white;
+  color: black;
   
 }
 code {
+  font-family: Consolas,"courier new";
   color: black;
-  
-}</style>
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+
+
+</style>
   <head>
     <title>Bento</title>
     <meta charset="utf-8">
@@ -93,43 +100,22 @@ code {
 
                   	<ul>
                   		<li>Download the source code from <a href="https://github.com/breakerspace/bento">Github</a></li>
-                  		<li>Open a new terminal. Start the Bento Server.</li>
+                  		<li>Open a new terminal. Go to the <code>/testing</code> directory using <code>cd /bento/testing</code>. Start the Bento Server using <code>python3.6 runserver.py</code>. </li>
 
-                  		<section class="ftco-section ftco-bread">
-		                  <div class="container">
-		                    <div class="row no-gutters slider-text justify-content-left align-items-center">
-		                      <div class="col-md-8 ftco-animate">
-		                  <p>cd /bento/testing</p>
-		                  <p><code>python3.6 runserver.py</code></p>
-		                  </div>
-		                  </section>
-					  <pre><code>cd /bento/testing</code>
-					  <code>python3.6 runserver.py</code></pre>
-					  
-                  		<li>Open another terminal and connect to the Bento Server. A client wanting to connect to the Bento server may do so by using the APIs (<a href="api.html">navigate to API tutorial</a>) listed in the directory bento/bento/client/api.py to store, execute and perform various other tasks on his desired function. For instance, execute the command below, on another terminal, to store a function and execute it (prints hello world).</li>
-                  		<section class="ftco-section ftco-bread">
-		                  <div class="container">
-		                    <div class="row no-gutters slider-text justify-content-left align-items-center">
-		                      <div class="col-md-8 ftco-animate">
-		                  <p>cd /bento/testing</p>
-		                  <p>python3.6 test_hello_world.py localhost 8888</p>
-		                  </div>
-		                  </section>
-		                  	</ul>
+                  		
+                        
+                        
+
+                  		<li>Open another terminal and connect to the Bento Server. A client wanting to connect to the Bento server may do so by using the APIs (<a href="api.html">navigate to API tutorial</a>) listed in the directory <code>bento/bento/client/api.py</code> to store, execute and perform various other tasks on his desired function. For instance, execute the command <code>python3.6 test_hello_world.py localhost 8888</code>, on another terminal in the <code>cd /bento/testing</code> directory, to store a function and execute it (prints hello world).</li>
+                  		
+		                </ul>
 
                   
 
                 <h4>Torify</h4>
                 <ul>
                 <li>In order to maintain client anonymity, the client can connect to the Bento server over a Tor circuit using <a href="https://linux.die.net/man/1/torify">torify</a>. To do so, simply run the client with the torify command.</li>
-                <section class="ftco-section ftco-bread">
-		                  <div class="container">
-		                    <div class="row no-gutters slider-text justify-content-left align-items-center">
-		                      <div class="col-md-8 ftco-animate">
-		                  <p></p>
-		                  
-		                  </div>
-		                  </section>
+                <code> </code>
 
                  </ul>
 
