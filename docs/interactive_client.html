@@ -84,17 +84,50 @@ code {
               <div class="row">
                 <div class="col-md-82">
                   <h3>Introduction</h3>
-                  <p> 
+                  <p> The instructions in this article allow user to runan interactive client and upload and execute a function on a Bento Server in a user-friendly way. 
 
                   </p>
 
                 <h3>Instructions</h3>
-                <h5>Store</h5>
                 <p>
+                  <code>interactive_client.py</code> in the <code>/bento/experiments</code> directory, lets a user send requests to a Bento server on the 
+                  command line. Write quick functions and easily test them. Edit the file to change the address and port. Usage: <code>python3.6 interactive_client.py</code>
+                </p>
+                 <h3>Example Execution</h3>
+                  <code>
+                    
+                    >> store   <br/>
+                    >> enter name: add   <br/>
+                    >> enter code (enter three times to submit):   <br/>
+                    def add(x, y):   <br/>
+                        sum= x + y   <br/>
+                        return sum   <br/> <br/>
+
+                    ==recved token: 65ad27c2-5dfd-47bc-8ffd-c4180a2a0818  <br/><br/>   
+
+                    >> exec   <br/>
+                    >> enter token: 65ad27c2-5dfd-47bc-8ffd-c4180a2a0818  <br/> 
+                    >> enter call: add(9, 10)   <br/>
+
+                    ==recvd session_id: 7ee3bc7c-73d8-414b-8057-3c9ebf97aeae   <br/>
+
+                    >> open   <br/>
+                    >> enter session_id: 7ee3bc7c-73d8-414b-8057-3c9ebf97aeae   <br/><br/>
+
+                    ==ok session opened   <br/><br/>
+
+                    >> recv   <br/><br/>
+
+                    ==recved message from session: 7ee3bc7c-73d8-414b-8057-3c9ebf97aeae  <br/><br/> 
+
+                    19   <br/>
+                    
+                  </code>
+                
                   
 
                   
-                </p>
+                
 
       
               
