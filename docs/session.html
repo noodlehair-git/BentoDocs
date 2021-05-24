@@ -96,14 +96,14 @@ code {
                   <h3>Creating a Session</h3>
                 <h7>
                   The environment process gets passed a driver module and the user’s function code. The driver will parse and execute the user’s function. This way it doesn’t matter if the encapsulating process is a container, sandbox, or just a python interpreter. If there needs to be an update to how functions are executed all that needs to change is the driver. The executing function will be able to reach out to an API that is bundled with the driver. The API abstracts away interacting with standard in/out/err into convenient send and receive functions. This means that users can write functions that don’t need to understand how their function is executing. They just need to use “send()” or “recv()” in their code. 
-                
-                  
+                  <br/><br/><br/><br/><br/>
                   <img src="images/session_creation.png">
                   </h7>
 
                   <h3>Opening a Session</h3>
                   <h7>
                   Once a client sends an open request, the session’s state is set to open. A worker process is created that now completes the other side of the exchange process. As long as the session is open, the worker will send data back and forth between the session’s buffers and the client. The exchange and worker processes act as producers and consumers. When open, the session still buffers data but now that a worker exists the data is instantly consumed and sent to the client. The session stays open until a client disconnects, the function ends, or the client sends a close request. If the session closes while the function is still running all that needs to be done is to kill the worker process. With nothing to continue consuming output from, the session’s output buffer will begin accumulating data again. The exchange runs as long as the function does and will poll intermittently to see whether the environment process has terminated. Once the function terminates the exchange and environment processes can be reaped but there could still be output the client has yet to read. A session is only fully destroyed when the client disconnects with no data left in the session’s output buffer.
+                  <br/><br/><br/><br/><br/>
                   <img src="images/session_opening.png">
                   </h7>
 
