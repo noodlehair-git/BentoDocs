@@ -109,12 +109,12 @@ code {
                 </ul> 
                 <h4>Run Load Balancer with Bento</h4>
                 <ul>
-                  <li>Connect to the Bento Server and Store/Execute your function. Specify the number of replicas and number of connections desired per replica in the function. Code in <code>/bento/experiments/LoadBalancer/load.func</code></li>
+                  <li>Connect to the Bento Server and Store/Execute your function. Specify the number of replicas and number of connections desired per replica in the function. Code in <code>/bento/experiments/LoadBalancer/load_balancer.func</code></li>
 
-                 <code>write code to start load balancer</code>
+                 <code>python3 driver.py [IP of bento server] [port of bento server]</code>
 
                   <li>Connect all replicas to the LoadBalancer.</li>
-                  <code>python3 replica.py <IP of loadbalancer></code>
+                  <code>python3 replica.py [IP of loadbalancer]</code>
                   <li>You are all set!</li>
                   <li>Refer to the <a href="https://github.com/breakerspace/bento/tree/main/experiments/LoadBalancer"> ReadMe.md</a> to run experiments.
                 </ul>
